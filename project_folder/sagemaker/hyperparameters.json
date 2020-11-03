@@ -1,0 +1,16 @@
+{
+    "text-col": "text_body",
+    "target-col": "target",
+    "sample-col": "Sample",
+    "vocab-size": 15000,
+    "max-sequence-length": 50,
+    "embedding-dim": 100,
+    "embedding-trainable": true,
+    "include-numerics": false,
+    "padding-method": "pre",
+    "num-layers": 2,
+    "hidden-units": 64,
+    "dropout-rate": 0.2,
+    "batch-size": 32,
+    "num-epochs": 2
+}

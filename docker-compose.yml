@@ -1,0 +1,20 @@
+version: "3.7"
+services:
+  # Serve a local model (port 8080)
+  serve-local:
+    image: ml-suggest-billing-codes-development:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.inference
+    environment:
+      ENVIRONMENT: development
+      SERVICE_NAME: ml-suggest-billing-codes
+      INSTANCE: default
+      MODEL_FILE: models/model.h5
+      PARAMETERS_FILE: models/artifacts.pkl
+      PREDICTIONS_DYNAMODB_TABLE: ml-model-predictions-qualification
+    ports:
+      - "8080:80"
+    volumes:
+      - ~/.aws:/root/.aws
+      - ./models:/app/models
